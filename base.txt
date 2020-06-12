@@ -4,7 +4,7 @@ several chnages
 
 line 1
 
-line 2
+line 2 - extra changes in second commit
 
 line 3
 
