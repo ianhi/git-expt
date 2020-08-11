@@ -4,6 +4,8 @@ about: blarg blarg blarg blarg blarg blarg
 labels: Question
 ---
 
+NO comment version
+
 <!--
 **If your issue is a usage question, please submit it in one of these other channels instead:**
 - StackOverflow with the Matplotlib tag: https://stackoverflow.com/questions/tagged/matplotlib
