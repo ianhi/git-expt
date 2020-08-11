@@ -2,7 +2,6 @@
 name: blarg/blarg/blarg
 about: blarg blarg blarg blarg blarg blarg
 labels: Question
-<!-- wowoowowow -->
 ---
 
 <!--
