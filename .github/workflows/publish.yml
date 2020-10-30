@@ -3,7 +3,7 @@ name: Publish Package
 on:
   push:
     branches: [ master ]
-  - paths: '_version.py'
+    paths: '_version.py'
 
 jobs:
   deploy:
