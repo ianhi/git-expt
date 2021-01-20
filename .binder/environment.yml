@@ -2,8 +2,8 @@ name: mpl-interactions
 channels:
 - conda-forge
 dependencies:
-- jupyterlab
-- ipympl
+- jupyterlab>=3.0.5
+- ipympl>=0.6.2
 - scipy
 - pip
 - pip:
