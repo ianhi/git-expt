@@ -1,3 +1,4 @@
+---
 name: :bug: Bug Report
 about: Report a bug or issue with Matplotlib
 ---
