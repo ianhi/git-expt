@@ -1,8 +1,7 @@
 ---
-name: :bug: Bug Report
+name: 🐛 Bug Report
 about: Report a bug or issue with Matplotlib
 ---
-:bug:
 <!--To help us understand and resolve your issue, please fill out the form to the best of your ability.-->
 <!--You can feel free to delete the sections that do not apply.-->
 
