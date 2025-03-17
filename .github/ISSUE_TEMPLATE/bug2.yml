@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Please provide the following information.
-  - type: input
+  - type: textarea
     id: version-info
     attributes:
       label: Versions
