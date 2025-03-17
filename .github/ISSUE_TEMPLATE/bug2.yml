@@ -1,0 +1,51 @@
+description: Report incorrect behaviour in the library.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide the following information.
+  - type: input
+    id: version-info
+    attributes:
+      label: Versions
+      description: Output of ``zarr.print_debug_info()``
+      placeholder: |
+        platform: macOS-15.3-arm64-arm-64bit-Mach-O
+        python: 3.13.2
+
+        zarr: 3.0.5
+
+        numcodecs: 0.15.1
+        numpy: 2.2.3
+        fsspec: 2025.3.0
+    validations:
+      required: true
+  - type: input
+    id: installation
+    attributes:
+      label: Installation
+      description: How was Zarr installed?
+      placeholder: e.g., "using pip into virtual environment", or "using conda"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain why the current behavior is a problem, what the expected output/behaviour is, and why the expected output/behaviour is a better solution.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, reproducible code sample, a copy-pastable example if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-output
+    attributes:
+      label: Additional output
+      description: If you think it might be relevant, please provide the output from ``pip freeze`` or ``conda env export`` depending on which was used to install Zarr.
+
