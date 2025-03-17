@@ -22,6 +22,7 @@ body:
         fsspec: 2025.3.0
     validations:
       required: true
+    render: shell
   - type: input
     id: installation
     attributes:
