@@ -1,3 +1,4 @@
+name: bug2
 description: Report incorrect behaviour in the library.
 labels: ["bug"]
 body:
