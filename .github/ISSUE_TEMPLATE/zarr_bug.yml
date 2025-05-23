@@ -57,7 +57,7 @@ body:
     id: reproduce
     attributes:
       label: Steps to reproduce
-      description: Minimal, reproducible code sample. Must list depencies per [PEP-723](https://peps.python.org/pep-0723/#example).
+      description: Minimal, reproducible code sample. Must list depencies per [PEP-723](https://peps.python.org/pep-0723/#example). Whe put in a file named `issue.py` calling `uv run issue.py` should show the issue.
       placeholder: |
         ```python
         # /// script
