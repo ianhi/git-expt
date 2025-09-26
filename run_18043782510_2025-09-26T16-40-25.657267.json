@@ -1,0 +1,18 @@
+{
+  "workflow_run_id": "18043782510",
+  "timestamp": "2025-09-26T16:40:25.657267Z",
+  "python_version": "3.11.13",
+  "packages": {
+    "numpy": "2.1.0",
+    "pytest": "8.4.2"
+  },
+  "failed_tests": [],
+  "test_status": "passed",
+  "git": {
+    "commit_hash": "30fff50b5274b919e0779af62de03a3b413f5726",
+    "commit_hash_short": "30fff50b",
+    "commit_message": "Simplify to numpy-only bisection demo with version-dependent tests",
+    "commit_author": "Ian Hunt-Isaak <ianhuntisaak@gmail.com>",
+    "commit_date": "2025-09-26 12:39:53 -0400"
+  }
+}
