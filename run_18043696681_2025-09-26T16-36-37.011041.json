@@ -1,0 +1,22 @@
+{
+  "workflow_run_id": "18043696681",
+  "timestamp": "2025-09-26T16:36:37.011041Z",
+  "python_version": "3.11.13",
+  "packages": {
+    "numpy": "2.3.3",
+    "requests": "2.32.5",
+    "pytest": "8.4.2",
+    "hypothesis": "6.140.2",
+    "pandas": "2.3.2",
+    "matplotlib": "3.10.6"
+  },
+  "failed_tests": [],
+  "test_status": "passed",
+  "git": {
+    "commit_hash": "5324c2fa098756cce854c3c11774e5de85c803e7",
+    "commit_hash_short": "5324c2fa",
+    "commit_message": "Set up git-expt for bisection testing",
+    "commit_author": "Ian Hunt-Isaak <ianhuntisaak@gmail.com>",
+    "commit_date": "2025-09-26 12:35:59 -0400"
+  }
+}
