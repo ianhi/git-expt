@@ -1,0 +1,18 @@
+{
+  "workflow_run_id": "18043925641",
+  "timestamp": "2025-09-26T16:46:53.838029Z",
+  "python_version": "3.11.13",
+  "packages": {
+    "numpy": "2.1.0",
+    "pytest": "8.4.2"
+  },
+  "failed_tests": [],
+  "test_status": "passed",
+  "git": {
+    "commit_hash": "b7ae77cff3a3360022c6d1b63fb57d78bc49bea8",
+    "commit_hash_short": "b7ae77cf",
+    "commit_message": "Fix dependencies with pyproject.toml for numpy 2.1.0 baseline",
+    "commit_author": "Ian Hunt-Isaak <ianhuntisaak@gmail.com>",
+    "commit_date": "2025-09-26 12:46:25 -0400"
+  }
+}
