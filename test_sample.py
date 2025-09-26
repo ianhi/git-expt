@@ -1,5 +1,5 @@
 """
-Sample tests to demonstrate the bisection feature.
+Sample tests to demonstrate the bisection feature with numpy version dependency.
 """
 import pytest
 import sys
@@ -10,49 +10,57 @@ def test_always_passes():
     assert 1 + 1 == 2
 
 
-def test_python_version_dependent():
-    """A test that might fail depending on Python version."""
-    # This will fail if we're running Python < 3.10
-    assert sys.version_info >= (3, 8), f"Python version {sys.version_info} is too old"
-
-
-def test_package_dependent():
-    """A test that depends on package versions."""
+def test_numpy_version_dependent():
+    """A test that depends on numpy version - will fail if numpy >= 2.2."""
     try:
         import numpy as np
-        # This might fail with different numpy versions
-        assert hasattr(np, 'ndarray'), "numpy should have ndarray"
-        # Create a simple array test
-        arr = np.array([1, 2, 3])
-        assert arr.sum() == 6
+        print(f"numpy version: {np.__version__}")
+
+        # This test expects numpy < 2.2
+        # It will pass with numpy 2.1.0 but fail with 2.2+
+        major, minor = map(int, np.__version__.split('.')[:2])
+        version_tuple = (major, minor)
+
+        assert version_tuple < (2, 2), f"This test expects numpy < 2.2, got {np.__version__}"
+
     except ImportError:
-        pytest.skip("numpy not available")
+        pytest.fail("numpy should be available")
 
 
-def test_sometimes_fails():
-    """A test that we can toggle to demonstrate bisection."""
-    # We can change this to False to simulate a failing test
-    SHOULD_PASS = True  # Start with passing test for baseline
-    assert SHOULD_PASS, "This test was configured to fail"
-
-
-def test_import_specific_feature():
-    """Test that depends on specific library features."""
+def test_numpy_basic_functionality():
+    """Test basic numpy functionality."""
     try:
-        import json
-        # Test a feature that should be available
-        data = {"test": "value"}
-        assert json.dumps(data) == '{"test": "value"}'
+        import numpy as np
+
+        # Basic array operations that should work in any version
+        arr = np.array([1, 2, 3, 4, 5])
+        assert arr.sum() == 15
+        assert arr.mean() == 3.0
+        assert len(arr) == 5
+
     except ImportError:
-        pytest.fail("json module should be available")
+        pytest.fail("numpy should be available")
 
 
-@pytest.mark.parametrize("value", [1, 2, 3, 4, 5])
-def test_parametrized(value):
-    """Parametrized test to show multiple test nodeids."""
-    assert value > 0
-    # We can make some parameter values fail
-    if value == 4:
-        # Start with passing test for baseline
-        # assert False, f"Parameter {value} configured to fail"
-        pass
+def test_numpy_api_compatibility():
+    """Test that specific numpy APIs are available - version dependent."""
+    try:
+        import numpy as np
+
+        # This test will be sensitive to numpy version changes
+        arr = np.array([1.0, 2.0, 3.0])
+
+        # Test that basic functions exist
+        assert hasattr(np, 'ndarray')
+        assert hasattr(np, 'array')
+        assert hasattr(np, 'zeros')
+
+        # Create different array types
+        zeros = np.zeros(3)
+        ones = np.ones(3)
+
+        assert zeros.sum() == 0
+        assert ones.sum() == 3
+
+    except ImportError:
+        pytest.fail("numpy should be available")

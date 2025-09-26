@@ -39,7 +39,7 @@ jobs:
         uses: ianhi/issue-from-pytest-log-action@bisect
         with:
           log-path: pytest-log.jsonl
-          track-packages: "numpy,requests,pytest,hypothesis,pandas,matplotlib"
+          track-packages: "numpy,pytest"
           python-command: "python"
           bisect-branch: "bisect-data"
           issue-title: "🔍 Test Bisection Demo - Failed Tests"
