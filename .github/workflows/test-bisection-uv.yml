@@ -1,0 +1,41 @@
+name: Test Bisection with UV
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  test-uv:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for bisection
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up UV
+        uses: astral-sh/setup-uv@v1
+
+      - name: Run tests with UV
+        run: |
+          uv run pytest --report-log=pytest-log.jsonl -v
+        continue-on-error: true  # Continue even if tests fail
+
+      - name: Use issue-from-pytest-log-action with UV bisection
+        if: always()  # Run regardless of test outcome to store data
+        uses: ianhi/issue-from-pytest-log-action@bisect
+        with:
+          log-path: pytest-log.jsonl
+          track-packages: "all"  # Track all packages to show comprehensive analysis
+          python-command: "uv run python"
+          bisect-branch: "bisect-data-uv"
+          issue-title: "🔍 UV Bisection Demo - Failed Tests"
+          issue-label: "bisection-demo-uv"

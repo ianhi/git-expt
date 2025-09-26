@@ -1,0 +1,7 @@
+pytest
+pytest-reportlog
+numpy
+requests
+pandas
+matplotlib
+hypothesis
