@@ -6,16 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "git-expt"
 version = "0.1.0"
 description = "Test repository for git experiments and bisection demo"
-dependencies = [
-    "pytest",
-    "pytest-reportlog",
-    "numpy",
-    "requests",
-    "pandas",
-    "matplotlib",
-    "hypothesis",
-]
+dependencies = ["pytest", "pytest-reportlog", "numpy==2.1.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["."]
 python_files = ["test_*.py"]
+
