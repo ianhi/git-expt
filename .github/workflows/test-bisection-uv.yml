@@ -1,11 +1,10 @@
 name: Test Bisection with UV
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:  # Allow manual triggering
+  # Disabled to avoid conflicts with main bisection workflow
+  # pull_request:
+  #   branches: [main, master]
+  workflow_dispatch:  # Only allow manual triggering
 
 jobs:
   test-uv:

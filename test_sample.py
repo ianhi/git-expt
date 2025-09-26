@@ -32,7 +32,7 @@ def test_package_dependent():
 def test_sometimes_fails():
     """A test that we can toggle to demonstrate bisection."""
     # We can change this to False to simulate a failing test
-    SHOULD_PASS = False  # Changed to False to demonstrate bisection
+    SHOULD_PASS = True  # Start with passing test for baseline
     assert SHOULD_PASS, "This test was configured to fail"
 
 
@@ -53,5 +53,6 @@ def test_parametrized(value):
     assert value > 0
     # We can make some parameter values fail
     if value == 4:
-        # Uncomment to make this parameter fail
-        assert False, f"Parameter {value} configured to fail"
+        # Start with passing test for baseline
+        # assert False, f"Parameter {value} configured to fail"
+        pass

@@ -5,7 +5,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch: # Allow manual triggering
 
 jobs:
   test:
@@ -18,11 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Need full history for bisection
+          fetch-depth: 0 # Need full history for bisection
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -34,10 +34,9 @@ jobs:
       - name: Run tests with pytest-reportlog
         run: |
           pytest --report-log=pytest-log.jsonl -v
-        continue-on-error: true  # Continue even if tests fail
 
       - name: Use issue-from-pytest-log-action with bisection
-        if: always()  # Run regardless of test outcome to store data
+        if: always() # Run regardless of test outcome to store data
         uses: ianhi/issue-from-pytest-log-action@bisect
         with:
           log-path: pytest-log.jsonl
@@ -46,3 +45,4 @@ jobs:
           bisect-branch: "bisect-data"
           issue-title: "🔍 Test Bisection Demo - Failed Tests"
           issue-label: "bisection-demo"
+
